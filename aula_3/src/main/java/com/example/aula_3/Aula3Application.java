@@ -23,18 +23,34 @@ public class Aula3Application {
 		){
 			return args ->{
 				System.out.println("Exemplo inserindo cursos");
-				cursoRepository.insert(new Curso(0, "Análise e Desenvolvimento de Sistemas", 2000));
-				cursoRepository.insert(new Curso(0, "Análise de Dados", 1500));
+				cursoRepository.save(new Curso(0, "Análise e Desenvolvimento de Sistemas", 2000));
+				cursoRepository.save(new Curso(0, "Análise de Dados", 1500));
 
-				List<Curso> listaCursos = cursoRepository.obtainAll();
+				System.out.println("Selecionar todos");
+				List<Curso> listaCursos = cursoRepository.findAll();
+				listaCursos.forEach(System.out::println);
+
+				System.out.println("Selecionar por nome");
+				listaCursos = cursoRepository.findByNameLike("%De%");
 				listaCursos.forEach(System.out::println);
 				
 				System.out.println("Exemplo inserindo categorias");
 				CategoriaCurso c1 = new CategoriaCurso(0, "Área de Tecnologia");
-				categoriaCursoRepository.insert(c1);
+				categoriaCursoRepository.save(c1);
 
 				listaCursos.get(0).setCategoriaCurso(c1);
-				cursoRepository.insert(listaCursos.get(0));
+				cursoRepository.save(listaCursos.get(0));
+
+				// System.out.println("Exemplo Lazy");
+				// List<CategoriaCurso> categs = categoriaCursoRepository.findAll();
+				// for(CategoriaCurso ca: categs){
+				// 	System.out.println(ca.getId() + " - " + ca.getName() + " qtde_cursos: " + ca.getCursos());
+				// }
+
+				System.out.println("Exemplo Fetch");
+				CategoriaCurso cc = categoriaCursoRepository.findCategoriaCursoFetchCursos((Integer) 1);
+				System.out.println(cc.getCursos().size());
+
 
 			};
 	}

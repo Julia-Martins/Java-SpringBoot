@@ -18,6 +18,9 @@ public class CategoriaCurso{
     @Column(nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "categoriaCurso"/*, fetch = FetchType.EAGER*/)
+    private List<Curso> cursos_test;
+
     public CategoriaCurso(){}
 
     public CategoriaCurso(int id, String name){
