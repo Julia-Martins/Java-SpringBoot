@@ -23,8 +23,8 @@ public class Aula3Application {
 		){
 			return args ->{
 				System.out.println("Exemplo inserindo cursos");
-				cursoRepository.save(new Curso(0, "Análise e Desenvolvimento de Sistemas", 2000));
-				cursoRepository.save(new Curso(0, "Análise de Dados", 1500));
+				cursoRepository.save(new Curso(null, "Análise e Desenvolvimento de Sistemas", 2000));
+				cursoRepository.save(new Curso(null, "Análise de Dados", 1500));
 
 				System.out.println("Selecionar todos");
 				List<Curso> listaCursos = cursoRepository.findAll();
@@ -35,8 +35,12 @@ public class Aula3Application {
 				listaCursos.forEach(System.out::println);
 				
 				System.out.println("Exemplo inserindo categorias");
-				CategoriaCurso c1 = new CategoriaCurso(0, "Área de Tecnologia");
+				CategoriaCurso c1 = new CategoriaCurso(null, "Área de Tecnologia");
+				CategoriaCurso c2 = new CategoriaCurso(null, "Área Jurídica");
+				CategoriaCurso c3 = new CategoriaCurso(null, "Área Administrativa");
 				categoriaCursoRepository.save(c1);
+				categoriaCursoRepository.save(c2);
+				categoriaCursoRepository.save(c3);
 
 				listaCursos.get(0).setCategoriaCurso(c1);
 				cursoRepository.save(listaCursos.get(0));

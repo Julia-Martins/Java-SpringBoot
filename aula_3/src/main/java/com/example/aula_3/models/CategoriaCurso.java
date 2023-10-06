@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 public class CategoriaCurso{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(nullable = false)
     private String name;
 
@@ -23,16 +23,16 @@ public class CategoriaCurso{
 
     public CategoriaCurso(){}
 
-    public CategoriaCurso(int id, String name){
+    public CategoriaCurso(Integer id, String name){
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
