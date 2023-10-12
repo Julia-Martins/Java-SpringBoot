@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Comandos da Tarefa 3",
+    "dateExported": "2023-10-12T21:11:12.344Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b2ef18a4-0575-47cd-9f56-b9b2a829315b",
+            "colId": "93ced4c5-60ab-43f9-b96c-6eee0ca25008",
+            "containerId": "",
+            "name": "listarTodos",
+            "url": "http://localhost:8080/api/produtos",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-10-12T20:39:13.064Z",
+            "modified": "2023-10-12T20:41:59.538Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de8d2fd3-3648-4bf3-becb-037540c03d39",
+            "colId": "93ced4c5-60ab-43f9-b96c-6eee0ca25008",
+            "containerId": "",
+            "name": "listarPorId",
+            "url": "http://localhost:8080/api/produtos/2",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-10-12T20:42:21.474Z",
+            "modified": "2023-10-12T20:43:30.946Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "647814c0-2c12-46f1-a761-3a8a4ca6de09",
+            "colId": "93ced4c5-60ab-43f9-b96c-6eee0ca25008",
+            "containerId": "",
+            "name": "salvarProduto",
+            "url": "http://localhost:8080/api/produtos",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-10-12T20:44:08.031Z",
+            "modified": "2023-10-12T21:05:17.016Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n  \"nome\": \"Militante\",\n  \"preco\": 19900.098,\n  \"id_categoriaProd\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f3c0bee-e291-41f9-a825-2a50608dbc3f",
+            "colId": "93ced4c5-60ab-43f9-b96c-6eee0ca25008",
+            "containerId": "",
+            "name": "editarProduto",
+            "url": "http://localhost:8080/api/produtos/7",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-10-12T21:05:57.476Z",
+            "modified": "2023-10-12T21:08:38.535Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"nome\": \"Militante MAMACO\",\n    \"preco\": 19900.098,\n    \"id_categoriaProd\": 2\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5571fb09-9308-4ef9-8442-a78f88a60513",
+            "colId": "93ced4c5-60ab-43f9-b96c-6eee0ca25008",
+            "containerId": "",
+            "name": "excluirProduto",
+            "url": "http://localhost:8080/api/produtos/7",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-10-12T21:08:57.309Z",
+            "modified": "2023-10-12T21:09:27.652Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
